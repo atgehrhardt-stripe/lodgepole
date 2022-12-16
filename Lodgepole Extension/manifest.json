@@ -1,0 +1,29 @@
+{
+    "name": "Lodgepole",
+    "version": "0.0.1",
+    "description": "Allows execution of js scripts on page.",
+    "manifest_version": 3,
+    "author": "Andrew Tait Gehrhardt",
+    "permissions": [
+        "scripting", 
+        "activeTab",
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+        "resources": ["library.js", "watcher.js"],
+        "matches": ["<all_urls>"]
+        }
+    ],
+    "host_permissions": ["<all_urls>"],
+    "action":{
+        "default_popup": "popup.html",
+        "default_title": "Lodgepole"
+    }
+}
